@@ -1,0 +1,3 @@
+
+@GenerateMocks([NumberTriviaRemoteDataSource, NumberTriviaLocalDataSource, NetworkInfo,]);
+
