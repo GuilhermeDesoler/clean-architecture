@@ -14,10 +14,11 @@ import 'package:mockito/mockito.dart';
 import 'number_trivia_repository_impl_test.mocks.dart';
 
 @GenerateMocks([
-  NumberTriviaRemoteDataSource,
+  // NumberTriviaRemoteDataSource,
   NumberTriviaLocalDataSource,
   NetworkInfo,
 ])
+@GenerateNiceMocks([MockSpec<NumberTriviaRemoteDataSource>()])
 void main() {
   late NumberTriviaRepositoryImpl numberTriviaRepositoryImpl;
   late MockNumberTriviaRemoteDataSource mockNumberTriviaRemoteDataSource;
@@ -60,14 +61,14 @@ void main() {
     const tNumberTriviaModel = NumberTriviaModel(text: 'test', number: tNumber);
     const NumberTrivia tNumberTrivia = tNumberTriviaModel;
 
-    // test('Should check if the device is online', () {
-    //   // arrange
-    //   when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-    //   // act
-    //   numberTriviaRepositoryImpl.getConcreteNumberTrivia(tNumber);
-    //   // assert
-    //   verify(mockNetworkInfo.isConnected);
-    // });
+    test('Should check if the device is online', () {
+      // arrange
+      when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+      // act
+      numberTriviaRepositoryImpl.getConcreteNumberTrivia(tNumber);
+      // assert
+      verify(mockNetworkInfo.isConnected);
+    });
 
     runTestsOnline(() {
       test(
@@ -155,14 +156,14 @@ void main() {
     const tNumberTriviaModel = NumberTriviaModel(text: 'test', number: 123);
     const NumberTrivia tNumberTrivia = tNumberTriviaModel;
 
-    // test('Should check if the device is online', () async {
-    //   // arrange
-    //   when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-    //   // act
-    //   numberTriviaRepositoryImpl.getRandomNumberTrivia();
-    //   // assert
-    //   verify(mockNetworkInfo.isConnected);
-    // });
+    test('Should check if the device is online', () async {
+      // arrange
+      when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+      // act
+      numberTriviaRepositoryImpl.getRandomNumberTrivia();
+      // assert
+      verify(mockNetworkInfo.isConnected);
+    });
 
     runTestsOnline(() {
       test(

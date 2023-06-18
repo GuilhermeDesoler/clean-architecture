@@ -10,7 +10,7 @@ import '../../domain/entities/number_trivia.dart';
 import '../../domain/repositories/number_trivia_repository.dart';
 import '../models/number_trivia_model.dart';
 
-typedef Future<NumberTriviaModel> _ConcreteOrRandomChooser();
+typedef _ConcreteOrRandomChooser = Future<NumberTriviaModel> Function();
 
 class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   NumberTriviaRepositoryImpl({
