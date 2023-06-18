@@ -5,8 +5,8 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/number_trivia.dart';
 import '../repositories/number_trivia_repository.dart';
 
-class GetRandomNumberTrivia implements Usecase<NumberTrivia, NoParams> {
-  GetRandomNumberTrivia(this.repository);
+class GetTriviaForRandomNumber implements Usecase<NumberTrivia, NoParams> {
+  GetTriviaForRandomNumber(this.repository);
 
   final NumberTriviaRepository repository;
 
