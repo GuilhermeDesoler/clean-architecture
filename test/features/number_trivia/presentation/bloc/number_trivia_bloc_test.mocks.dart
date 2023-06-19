@@ -3,11 +3,20 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'dart:async' as _i7;
+
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:flutter_project/core/error/failures.dart' as _i5;
+import 'package:flutter_project/core/usecases/usecase.dart' as _i10;
 import 'package:flutter_project/core/util/imput_converter.dart' as _i4;
-import 'package:flutter_project/features/number_trivia/presentation/bloc/number_trivia_bloc.dart'
+import 'package:flutter_project/features/number_trivia/domain/entities/number_trivia.dart'
+    as _i8;
+import 'package:flutter_project/features/number_trivia/domain/repositories/number_trivia_repository.dart'
     as _i3;
+import 'package:flutter_project/features/number_trivia/domain/usecases/get_croncrete_number_trivia.dart'
+    as _i6;
+import 'package:flutter_project/features/number_trivia/domain/usecases/get_random_number_trivia.dart'
+    as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -31,41 +40,15 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
-/// A class which mocks [GetTriviaForConcreteNumber].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGetTriviaForConcreteNumber extends _i1.Mock
-    implements _i3.GetTriviaForConcreteNumber {
-  MockGetTriviaForConcreteNumber() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  String get numberString => (super.noSuchMethod(
-        Invocation.getter(#numberString),
-        returnValue: '',
-      ) as String);
-  @override
-  List<Object> get props => (super.noSuchMethod(
-        Invocation.getter(#props),
-        returnValue: <Object>[],
-      ) as List<Object>);
-}
-
-/// A class which mocks [GetTriviaForRandomNumber].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGetTriviaForRandomNumber extends _i1.Mock
-    implements _i3.GetTriviaForRandomNumber {
-  MockGetTriviaForRandomNumber() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  List<Object> get props => (super.noSuchMethod(
-        Invocation.getter(#props),
-        returnValue: <Object>[],
-      ) as List<Object>);
+class _FakeNumberTriviaRepository_1 extends _i1.SmartFake
+    implements _i3.NumberTriviaRepository {
+  _FakeNumberTriviaRepository_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [InputConverter].
@@ -91,4 +74,96 @@ class MockInputConverter extends _i1.Mock implements _i4.InputConverter {
           ),
         ),
       ) as _i2.Either<_i5.Failure, int>);
+}
+
+/// A class which mocks [GetConcreteNumberTrivia].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetConcreteNumberTrivia extends _i1.Mock
+    implements _i6.GetConcreteNumberTrivia {
+  @override
+  _i3.NumberTriviaRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeNumberTriviaRepository_1(
+          this,
+          Invocation.getter(#repository),
+        ),
+        returnValueForMissingStub: _FakeNumberTriviaRepository_1(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i3.NumberTriviaRepository);
+  @override
+  _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>> call(
+          _i6.Params? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue:
+            _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i8.NumberTrivia>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i8.NumberTrivia>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>>);
+}
+
+/// A class which mocks [GetRandomNumberTrivia].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetRandomNumberTrivia extends _i1.Mock
+    implements _i9.GetRandomNumberTrivia {
+  @override
+  _i3.NumberTriviaRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeNumberTriviaRepository_1(
+          this,
+          Invocation.getter(#repository),
+        ),
+        returnValueForMissingStub: _FakeNumberTriviaRepository_1(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i3.NumberTriviaRepository);
+  @override
+  _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>> call(
+          _i10.NoParams? params) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #call,
+          [params],
+        ),
+        returnValue:
+            _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i8.NumberTrivia>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>>.value(
+                _FakeEither_0<_i5.Failure, _i8.NumberTrivia>(
+          this,
+          Invocation.method(
+            #call,
+            [params],
+          ),
+        )),
+      ) as _i7.Future<_i2.Either<_i5.Failure, _i8.NumberTrivia>>);
 }
